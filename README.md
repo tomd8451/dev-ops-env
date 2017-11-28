@@ -33,10 +33,10 @@ docker-compose up -d
 
 #### TeamCity Server Setup
 1)  To begin setting up TeamCity, navigate to [http://localhost:8111](http://localhost:8111) to begin setting up Teamcity.
-![NavigateToTCScreenshot](https://github.com/tomd8451/dev-ops-env/blob/master/docs/01_NavigateToTeamcity.png?raw=true)  
+![NavigateToTCScreenshot](https://github.com/tomd8451/dev-ops-env/blob/bitbucket/docs/01_NavigateToTeamcity.png?raw=true)  
 
 2)  When prompted, select PostgreSQL and click to refresh JDBC drivers
-![SelectPostgreSQL](https://github.com/tomd8451/dev-ops-env/blob/master/docs/02_SelectPostgreSQL.png?raw=true)  
+![SelectPostgreSQL](https://github.com/tomd8451/dev-ops-env/blob/bitbucket/docs/02_SelectPostgreSQL.png?raw=true)  
 
 3)  Enter the following credentials to connect TeamCity Server to your running PostgreSQL container:  
 
@@ -47,38 +47,38 @@ docker-compose up -d
     | User Name            | teamcity |  
     | Password             | teamcity |  
     
-    ![EnterDBCreds](https://github.com/tomd8451/dev-ops-env/blob/master/docs/03_EnterDBCreds.png?raw=true)  
+    ![EnterDBCreds](https://github.com/tomd8451/dev-ops-env/blob/bitbucket/docs/03_EnterDBCreds.png?raw=true)  
 
 4)  Then create the credentials for the Teamcity Admin account.  
-![TeamcityAdminCreds](https://github.com/tomd8451/dev-ops-env/blob/master/docs/04_CreateTCAdminCreds.png?raw=true)  
+![TeamcityAdminCreds](https://github.com/tomd8451/dev-ops-env/blob/bitbucket/docs/04_CreateTCAdminCreds.png?raw=true)  
 
 5)  Now that the server is running, navigate to the Agents tab to connect the running build agent.
-![NavigateToAgents](https://github.com/tomd8451/dev-ops-env/blob/master/docs/05_NavigateToAgents.png?raw=true)  
+![NavigateToAgents](https://github.com/tomd8451/dev-ops-env/blob/bitbucket/docs/05_NavigateToAgents.png?raw=true)  
 
 6)  Select the Unauthorized Agents tab to view the dockerized build agent.
-![ViewUnauthorized](https://github.com/tomd8451/dev-ops-env/blob/master/docs/06_ViewUnauthorizedAgents.png?raw=true)  
+![ViewUnauthorized](https://github.com/tomd8451/dev-ops-env/blob/bitbucket/docs/06_ViewUnauthorizedAgents.png?raw=true)  
 
 7)  Click the unauthorized hyperlink and authorize the build agent.
-![AuthorizeBuildAgent](https://github.com/tomd8451/dev-ops-env/blob/master/docs/07_AuthorizeDockerizedBuildAgent.png?raw=true)  
+![AuthorizeBuildAgent](https://github.com/tomd8451/dev-ops-env/blob/bitbucket/docs/07_AuthorizeDockerizedBuildAgent.png?raw=true)  
 
 8)  Select the Connected tab and verify your dockerized build agent is connected (this may take a few moments).  
-![ViewUnauthorized](https://github.com/tomd8451/dev-ops-env/blob/master/docs/08_VerifyBuildAgentConnects.png?raw=true)  
+![ViewUnauthorized](https://github.com/tomd8451/dev-ops-env/blob/bitbucket/docs/08_VerifyBuildAgentConnects.png?raw=true)  
 
 #### Bitbucket Setup  
 9)  Navigate to [http://localhost:7990](http://localhost:7990)
-![NavigateToBitbucket](https://github.com/tomd8451/dev-ops-env/blob/master/docs/09_NavigateToBitBucket.png?raw=true)  
+![NavigateToBitbucket](https://github.com/tomd8451/dev-ops-env/blob/bitbucket/docs/09_NavigateToBitBucket.png?raw=true)  
 
 10)  Choose to get an evaluation license.
-![BitbucketEval](https://github.com/tomd8451/dev-ops-env/blob/master/docs/10_ChooseToGetAnEvaulationLicense.png?raw=true) 
+![BitbucketEval](https://github.com/tomd8451/dev-ops-env/blob/bitbucket/docs/10_ChooseToGetAnEvaulationLicense.png?raw=true) 
 
 11)  Choose Bitbucket Server.
-![BitbucketServer](https://github.com/tomd8451/dev-ops-env/blob/master/docs/11_ChooseBitbucketServerAndGenerateLicense.png?raw=true)  
+![BitbucketServer](https://github.com/tomd8451/dev-ops-env/blob/bitbucket/docs/11_ChooseBitbucketServerAndGenerateLicense.png?raw=true)  
 
 12)  Confirm installing license to running server.
-![ConfirmInstall](https://github.com/tomd8451/dev-ops-env/blob/master/docs/12_ConfirmInstallingLicenseToInstance.png?raw=true)  
+![ConfirmInstall](https://github.com/tomd8451/dev-ops-env/blob/bitbucket/docs/12_ConfirmInstallingLicenseToInstance.png?raw=true)  
 
 13)  Click Next after license has been added.
-![ClickNext](https://github.com/tomd8451/dev-ops-env/blob/master/docs/13_ClickNextAfterLicenseHasBeenAdded.png?raw=true)  
+![ClickNext](https://github.com/tomd8451/dev-ops-env/blob/bitbucket/docs/13_ClickNextAfterLicenseHasBeenAdded.png?raw=true)  
 
 14)  Create Bitbucket Admin credentials.
-![CreateAdminCreds](https://github.com/tomd8451/dev-ops-env/blob/master/docs/14_CreateBitbucketAdminCreds.png?raw=true)  
+![CreateAdminCreds](https://github.com/tomd8451/dev-ops-env/blob/bitbucket/docs/14_CreateBitbucketAdminCreds.png?raw=true)  
