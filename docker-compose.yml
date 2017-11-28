@@ -1,0 +1,87 @@
+version: '3'
+
+services:
+  devopsdb:
+    restart: always
+    image: dev_ops_postgres
+    build: ./dev_ops_postgres
+    environment:
+      - DB_GITLAB_USER=gitlab
+      - DB_GITLAB_PASS=gitlab
+      - DB_GITLAB_NAME=gitlab
+      - DB_TEAMCITY_USER=teamcity
+      - DB_TEAMCITY_PASS=teamcity
+      - DB_TEAMCITY_NAME=teamcity
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./database/data/:/var/lib/postgresql:rw
+    networks:
+      - 'devops'
+  devopsredis:
+    restart: always
+    image: redis
+    networks:
+      - 'devops'
+  teamcityserver:
+    image: jetbrains/teamcity-server
+    container_name: devopsteamcityserver
+    volumes:
+      - './teamcity/teamcity_server/data:/data/teamcity_server/datadir'
+      - './teamcity/teamcity_server/logs:/data/teamcity/logs'
+    networks:
+      - "devops"
+    ports:
+      - "8111:8111"
+    depends_on:
+      - devopsdb
+  teamcityagent:
+    image: jetbrains/teamcity-agent
+    container_name: devopsteamcityagent
+    networks:
+      - "devops"
+    ports:
+      - "9090:9090"
+    environment:
+      - SERVER_URL=teamcityserver:8111
+    depends_on:
+      - teamcityserver
+  devopsgitlab:
+    image: 'gitlab/gitlab-ce'
+    restart: always
+    hostname: 'localhost'
+    links:
+      - devopsdb:devopsdb
+      - devopsredis:devopsredis
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        postgresql['enable'] = false
+        gitlab_rails['db_username'] = "gitlab"
+        gitlab_rails['db_password'] = "gitlab"
+        gitlab_rails['db_host'] = "devopsdb"
+        gitlab_rails['db_port'] = "5432"
+        gitlab_rails['db_database'] = "gitlab"
+        gitlab_rails['db_adapter'] = 'postgresql'
+        gitlab_rails['db_encoding'] = 'utf8'
+        redis['enable'] = false
+        gitlab_rails['redis_host'] = 'devopsredis'
+        gitlab_rails['redis_port'] = '6379'
+        external_url 'http://localhost:30080'
+        gitlab_rails['gitlab_shell_ssh_port'] = 30022
+    ports:
+      # both ports must match the port from external_url above
+      - "30080:30080"
+      # the mapped port must match ssh_port specified above.
+      - "30022:22"
+    volumes:
+      - ./gitlab/config:/etc/gitlab:rw
+      - ./gitlab/logs:/var/log/gitlab:rw
+      - ./gitlab/data:/var/opt/gitlab:rw
+    networks:
+      - 'devops'
+    depends_on:
+      - devopsdb
+      - devopsredis
+  
+networks:
+  devops:
