@@ -32,7 +32,7 @@ docker-compose up -d
 ```
 
 #### TeamCity Server Setup
-1)  To begin setting up TeamCity, navigate to [http://localhost:8111](http://localhost:8111) to begin setting up Teamcity.
+1)  To begin setting up TeamCity, navigate to <a href="http://localhost:8111" target="_blank">http://localhost:8111</a> to begin setting up Teamcity.
 ![NavigateToTCScreenshot](https://github.com/tomd8451/dev-ops-env/blob/master/docs/01_NavigateToTeamcity.png?raw=true)  
 
 2)  When prompted, select PostgreSQL and click to refresh JDBC drivers
@@ -65,7 +65,7 @@ docker-compose up -d
 ![ViewUnauthorized](https://github.com/tomd8451/dev-ops-env/blob/master/docs/08_VerifyBuildAgentConnects.png?raw=true)  
 
 #### GitLab Setup  
-9)  Navigate to [http://localhost:30080](http://localhost:30080) and create a password for the admin account.
+9)  Navigate to <a href="http://localhost:30080" target="_blank">http://localhost:30080</a> and create a password for the admin account.
 ![NavigateToGitlab](https://github.com/tomd8451/dev-ops-env/blob/master/docs/09_NavigateToGitlabAndCreateAdminPassword.png?raw=true)  
 
 10)  Login with `admin@examle.com` and the password you just created.
