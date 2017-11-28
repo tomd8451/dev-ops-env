@@ -64,9 +64,21 @@ docker-compose up -d
 8)  Select the Connected tab and verify your dockerized build agent is connected (this may take a few moments).  
 ![ViewUnauthorized](https://github.com/tomd8451/dev-ops-env/blob/master/docs/08_VerifyBuildAgentConnects.png?raw=true)  
 
-#### GitLab Setup  
-9)  Navigate to [http://localhost:30080](http://localhost:30080) and create a password for the admin account.
-![NavigateToGitlab](https://github.com/tomd8451/dev-ops-env/blob/master/docs/09_NavigateToGitlabAndCreateAdminPassword.png?raw=true)  
+#### Bitbucket Setup  
+9)  Navigate to [http://localhost:7990](http://localhost:7990)
+![NavigateToBitbucket](https://github.com/tomd8451/dev-ops-env/blob/master/docs/09_NavigateToBitBucket.png?raw=true)  
 
-10)  Login with `admin@examle.com` and the password you just created.
-![GitlabLogin](https://github.com/tomd8451/dev-ops-env/blob/master/docs/10_LoginWithAdminAndNewlyCreatedPassword.png?raw=true) 
+10)  Choose to get an evaluation license.
+![BitbucketEval](https://github.com/tomd8451/dev-ops-env/blob/master/docs/10_ChooseToGetAnEvaulationLicense.png?raw=true) 
+
+11)  Choose Bitbucket Server.
+![BitbucketServer](https://github.com/tomd8451/dev-ops-env/blob/master/docs/11_ChooseBitbucketServerAndGenerateLicense.png?raw=true)  
+
+12)  Confirm installing license to running server.
+![ConfirmInstall](https://github.com/tomd8451/dev-ops-env/blob/master/docs/12_ConfirmInstallingLicenseToInstance.png?raw=true)  
+
+13)  Click Next after license has been added.
+![ClickNext](https://github.com/tomd8451/dev-ops-env/blob/master/docs/13_ClickNextAfterLicenseHasBeenAdded.png?raw=true)  
+
+14)  Create Bitbucket Admin credentials.
+![CreateAdminCreds](https://github.com/tomd8451/dev-ops-env/blob/master/docs/14_CreateBitbucketAdminCreds.png?raw=true)  

@@ -18,11 +18,6 @@ services:
       - ./database/data/:/var/lib/postgresql:rw
     networks:
       - 'devops'
-  devopsredis:
-    restart: always
-    image: redis
-    networks:
-      - 'devops'
   teamcityserver:
     image: jetbrains/teamcity-server
     container_name: devopsteamcityserver
@@ -46,42 +41,17 @@ services:
       - SERVER_URL=teamcityserver:8111
     depends_on:
       - teamcityserver
-  devopsgitlab:
-    image: 'gitlab/gitlab-ce'
-    restart: always
-    hostname: 'localhost'
+  devopsbitbucket:
+    image: 'atlassian/bitbucket-server'
     links:
-      - devopsdb:devopsdb
-      - devopsredis:devopsredis
-    environment:
-      GITLAB_OMNIBUS_CONFIG: |
-        postgresql['enable'] = false
-        gitlab_rails['db_username'] = "gitlab"
-        gitlab_rails['db_password'] = "gitlab"
-        gitlab_rails['db_host'] = "devopsdb"
-        gitlab_rails['db_port'] = "5432"
-        gitlab_rails['db_database'] = "gitlab"
-        gitlab_rails['db_adapter'] = 'postgresql'
-        gitlab_rails['db_encoding'] = 'utf8'
-        redis['enable'] = false
-        gitlab_rails['redis_host'] = 'devopsredis'
-        gitlab_rails['redis_port'] = '6379'
-        external_url 'http://localhost:30080'
-        gitlab_rails['gitlab_shell_ssh_port'] = 30022
+      - teamcityserver:teamcityserver
     ports:
-      # both ports must match the port from external_url above
-      - "30080:30080"
-      # the mapped port must match ssh_port specified above.
-      - "30022:22"
-    volumes:
-      - ./gitlab/config:/etc/gitlab:rw
-      - ./gitlab/logs:/var/log/gitlab:rw
-      - ./gitlab/data:/var/opt/gitlab:rw
+      - "7990:7990"
+      - "7999:7999"
     networks:
       - 'devops'
     depends_on:
-      - devopsdb
-      - devopsredis
+      - teamcityserver
   
 networks:
   devops:
