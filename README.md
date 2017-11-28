@@ -39,12 +39,14 @@ When prompted, select PostgreSQL and click to refresh JDBC drivers
 ![SelectPostgreSQL](https://github.com/tomd8451/dev-ops-env/blob/master/docs/02_SelectPostgreSQL.png?raw=true)  
 
 Enter the following credentials to connect TeamCity Server to your running PostgreSQL container:  
+
 | Field                | Value    |  
 |----------------------|----------|  
 | Database host[:port] | devopsdb |  
 | Database Name        | teamcity |  
 | User Name            | teamcity |  
 | Password             | teamcity |  
+
 ![EnterDBCreds](https://github.com/tomd8451/dev-ops-env/blob/master/docs/03_EnterDBCreds.png?raw=true)  
 
 Then create the credentials for the Teamcity Admin account.  
