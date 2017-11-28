@@ -32,41 +32,41 @@ docker-compose up -d
 ```
 
 #### TeamCity Server Setup
-To begin setting up TeamCity, navigate to [http://localhost:8111](http://localhost:8111) to begin setting up Teamcity.
+1)  To begin setting up TeamCity, navigate to [http://localhost:8111](http://localhost:8111) to begin setting up Teamcity.
 ![NavigateToTCScreenshot](https://github.com/tomd8451/dev-ops-env/blob/master/docs/01_NavigateToTeamcity.png?raw=true)  
 
-When prompted, select PostgreSQL and click to refresh JDBC drivers
+2)  When prompted, select PostgreSQL and click to refresh JDBC drivers
 ![SelectPostgreSQL](https://github.com/tomd8451/dev-ops-env/blob/master/docs/02_SelectPostgreSQL.png?raw=true)  
 
-Enter the following credentials to connect TeamCity Server to your running PostgreSQL container:  
+3)  Enter the following credentials to connect TeamCity Server to your running PostgreSQL container:  
 
-| Field                | Value    |  
-|----------------------|----------|  
-| Database host[:port] | devopsdb |  
-| Database Name        | teamcity |  
-| User Name            | teamcity |  
-| Password             | teamcity |  
+    | Field                | Value    |  
+    |----------------------|----------|  
+    | Database host[:port] | devopsdb |  
+    | Database Name        | teamcity |  
+    | User Name            | teamcity |  
+    | Password             | teamcity |  
+    
+    ![EnterDBCreds](https://github.com/tomd8451/dev-ops-env/blob/master/docs/03_EnterDBCreds.png?raw=true)  
 
-![EnterDBCreds](https://github.com/tomd8451/dev-ops-env/blob/master/docs/03_EnterDBCreds.png?raw=true)  
-
-Then create the credentials for the Teamcity Admin account.  
+4)  Then create the credentials for the Teamcity Admin account.  
 ![TeamcityAdminCreds](https://github.com/tomd8451/dev-ops-env/blob/master/docs/04_CreateTCAdminCreds.png?raw=true)  
 
-Now that the server is running, navigate to the Agents tab to connect the running build agent.
+5)  Now that the server is running, navigate to the Agents tab to connect the running build agent.
 ![NavigateToAgents](https://github.com/tomd8451/dev-ops-env/blob/master/docs/05_NavigateToAgents.png?raw=true)  
 
-Select the Unauthorized Agents tab to view the dockerized build agent.
+6)  Select the Unauthorized Agents tab to view the dockerized build agent.
 ![ViewUnauthorized](https://github.com/tomd8451/dev-ops-env/blob/master/docs/06_ViewUnauthorizedAgents.png?raw=true)  
 
-Click the unauthorized hyperlink and authorize the build agent.
+7)  Click the unauthorized hyperlink and authorize the build agent.
 ![AuthorizeBuildAgent](https://github.com/tomd8451/dev-ops-env/blob/master/docs/07_AuthorizeDockerizedBuildAgent.png?raw=true)  
 
-Select the Connected tab and verify your dockerized build agent is connected (this may take a few moments).  
+8)  Select the Connected tab and verify your dockerized build agent is connected (this may take a few moments).  
 ![ViewUnauthorized](https://github.com/tomd8451/dev-ops-env/blob/master/docs/08_VerifyBuildAgentConnects.png?raw=true)  
 
-#### GitLab Setup
-Navigate to [http://localhost:30080](http://localhost:30080) and create a password for the admin account.
+#### GitLab Setup  
+9)  Navigate to [http://localhost:30080](http://localhost:30080) and create a password for the admin account.
 ![NavigateToGitlab](https://github.com/tomd8451/dev-ops-env/blob/master/docs/09_NavigateToGitlabAndCreateAdminPassword.png?raw=true)  
 
-Login with `admin@examle.com` and the password you just created.
+10)  Login with `admin@examle.com` and the password you just created.
 ![GitlabLogin](https://github.com/tomd8451/dev-ops-env/blob/master/docs/10_LoginWithAdminAndNewlyCreatedPassword.png?raw=true) 
