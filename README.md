@@ -66,7 +66,7 @@ docker-compose up -d
 
 #### Bitbucket Setup  
 9)  Navigate to [http://localhost:7990](http://localhost:7990)
-![NavigateToBitbucket](https://github.com/tomd8451/dev-ops-env/blob/bitbucket/docs/09_NavigateToBitBucket.png?raw=true)  
+![NavigateToBitbucket](https://github.com/tomd8451/dev-ops-env/blob/bitbucket/docs/09_NavigateToBitbucket.png?raw=true)  
 
 10)  Choose to get an evaluation license.
 ![BitbucketEval](https://github.com/tomd8451/dev-ops-env/blob/bitbucket/docs/10_ChooseToGetAnEvaulationLicense.png?raw=true) 
